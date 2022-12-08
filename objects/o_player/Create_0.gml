@@ -1,25 +1,22 @@
 /// @description Insert description here
 // You can write your code in this editor
-macros(); 
-
 hsp = 0;
 vsp = 0;
 max_hsp = 2;
 walk_spd = 1.5;
+jump_spd = -5;
 
 hsp_decimal = 0;
 vsp_decimal = 0;
-
 drag = .12;
-
 facing = 1;
 
 left = 0;
 right = 0;
 up = 0;
 down = 0;
-
 attack = 0;
+jump = 0;
 
 enum states 
 {
@@ -34,13 +31,13 @@ enum states
 
 state = states.IDLE;
 
-states_array[states.IDLE]		  = player_idle_state;
-states_array[states.WALK]		  = player_walk_state;
-states_array[states.JUMP]		  = player_jump_state;
-states_array[states.ATTACK]		  = player_attack_state;
-states_array[states.BLOCK]		  = player_block_state;
-states_array[states.CROUCH]		  = player_crouch_state;
-states_array[states.CROUCH_BLOCK] = player_crouch_block_state;
+states_array[states.IDLE]		   = player_idle_state;
+states_array[states.WALK]		   = player_walk_state;
+states_array[states.JUMP]		   = player_jump_state;
+states_array[states.ATTACK]		   = player_attack_state;
+states_array[states.BLOCK]		   = player_block_state;
+states_array[states.CROUCH]		   = player_crouch_state;
+states_array[states.CROUCH_BLOCK]  = player_crouch_block_state;
 
 sprites_array[states.IDLE]		   = s_player_idle;
 sprites_array[states.WALK]		   = s_player_walk;

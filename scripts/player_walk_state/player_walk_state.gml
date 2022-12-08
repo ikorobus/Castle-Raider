@@ -11,6 +11,12 @@ function player_walk_state(){
 		image_index = 0;
 	}
 	
+	if jump 
+	{
+		state = states.JUMP;
+		vsp = jump_spd;
+	}
+	
 	apply_movement();
 	
 	anim();

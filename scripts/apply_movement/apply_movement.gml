@@ -26,9 +26,26 @@ function apply_movement(){
 		else 
 			x = x - (x mod global.tile_size) - (side - x);
 		hsp = 0;
-	} 
-	
+	}
 	// apply movement
 	x += hsp;
+	
+	var side;
+	if vsp > 0 
+		side = bbox_bottom; 
+	else 
+		side = bbox_top;
+	
+	var t1 = tilemap_get_at_pixel(global.map, bbox_left, side + vsp);
+	var t2 = tilemap_get_at_pixel(global.map, bbox_right, side + vsp);
+	
+	if t1 != VOID or t2 != VOID
+	{
+		if (vsp > 0) 
+			y = y - (y mod global.tile_size) + global.tile_size - 1 - (side - y);
+		else 
+			y = y - (y mod global.tile_size) - (side - y);
+		vsp = 0;
+	} 
 	y += vsp;
 }
