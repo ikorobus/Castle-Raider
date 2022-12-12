@@ -17,6 +17,12 @@ function player_idle_state(){
 		vsp = jump_spd;
 	}
 	
+	if block 
+	{
+		state = states.BLOCK;
+		hsp = 0;
+	}
+	
 	apply_movement();
 	
 	anim();

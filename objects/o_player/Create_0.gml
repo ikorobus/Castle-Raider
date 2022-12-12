@@ -5,6 +5,7 @@ vsp = 0;
 max_hsp = 2;
 walk_spd = 1.5;
 jump_spd = -5;
+jump_dampner = 2.5;
 
 hsp_decimal = 0;
 vsp_decimal = 0;
@@ -17,6 +18,8 @@ up = 0;
 down = 0;
 attack = 0;
 jump = 0;
+jump_held = 0;
+block = 0;
 
 enum states 
 {

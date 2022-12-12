@@ -1,11 +1,11 @@
 function player_walk_state(){
 	get_input();
-	
 	calc_movement();
 	
+	#region state machine
 	if hsp == 0 state = states.IDLE;
 	
-	if attack 
+ 	if attack 
 	{
 		state = states.ATTACK;
 		image_index = 0;
@@ -17,7 +17,13 @@ function player_walk_state(){
 		vsp = jump_spd;
 	}
 	
-	apply_movement();
+	if block 
+	{
+		state = states.BLOCK;
+		hsp = 0;
+	}
+	#endregion
 	
+	apply_movement();
 	anim();
 }
